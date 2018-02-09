@@ -18,5 +18,12 @@ public class OrganicTest {
 		int thirst = underTest.getThirst();
 		assertEquals(thirst,35);
 	}
+	@Test
+	public void shouldMakePetUseBathroom() {
+		Organic underTest = new Organic("","",50,50,50,50);
+		underTest.waste();
+		int waste = underTest.getWaste();
+		assertEquals(waste,30);
+	}
 
 }
