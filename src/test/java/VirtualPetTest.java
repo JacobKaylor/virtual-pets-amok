@@ -14,12 +14,6 @@ public class VirtualPetTest {
 	}
 
 	@Test
-	public void shouldAcceptNameDescriptionAndHaveDefaultAttributes() {
-		VirtualPet underTest = new VirtualPet("name", "description", 50, 50, 50, 50);
-		int hunger = underTest.getHunger();
-		assertEquals(hunger, 50);
-	}
-	@Test
 	public void shouldGetHealth() {
 		VirtualPet underTest = new VirtualPet("name", "description", 50, 50);
 		int health = underTest.getHealth();

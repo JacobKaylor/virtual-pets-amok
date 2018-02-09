@@ -7,7 +7,7 @@ public class RobotTest {
 	@Test
 	public void shouldAcceptOiling() {
 		Robot underTest = new Robot("name", "description", 50, 50);
-		underTest.oilAllRobots();
+		underTest.oilRobot();
 		int oil = underTest.getHealth();
 		assertEquals(oil, 65);
 	}
@@ -17,8 +17,9 @@ public class RobotTest {
 		Robot underTest = new Robot("name", "description", 50, 50);
 		underTest.tick();
 		int rust = underTest.getHealth();
-		assertEquals(rust, 50);
-
+		assertEquals(rust, 48);
 	}
+	
+	
 
 }

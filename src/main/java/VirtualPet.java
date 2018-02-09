@@ -32,51 +32,49 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		hunger += 3;
-		thirst += 3;
+	//	hunger += 3;
+	//	thirst += 3;
 		boredom += 3;
-		waste += 3;
+	//	waste += 3;
 		setHealth(getHealth() - 1);
 	}
 
-	public int getHunger() {
-		return hunger;
-	}
-
-	public int getThirst() {
-		return thirst;
-	}
+//	public int getHunger() {
+//		return hunger;
+//	}
+//
+//	public int getThirst() {
+//		return thirst;
+//	}
 
 	public int getBoredom() {
 		return boredom;
 	}
 
-	public int getWaste() {
-		return waste;
-	}
+//	public int getWaste() {
+//		return waste;
+//	}
 	public int getHealth() {
 		return health;
 	}
 
-	public void feed() {
-		hunger -= 15;
-		thirst += 5;
-		waste += 10;
-	}
+//	public void feed() {
+//		hunger -= 15;
+//		thirst += 5;
+//		waste += 10;
+//	}
 
-	public void water() {
-		thirst -= 15;
-	}
+//	public void water() {
+//		thirst -= 15;
+//	}
 
 	public void play() {
 		boredom -= 15;
-		thirst += 3;
-		hunger++;
 	}
 
-	public void waste() {
-		waste -= 20;
-	}
+//	public void waste() {
+//		waste -= 20;
+//	}
 
 
 	@Override

@@ -9,7 +9,7 @@ public class Robot extends VirtualPet{
 		
 	}
 
-	public void oilAllRobots() {
+	public void oilRobot() {
 		setHealth(getHealth() + 15);
 	}
 	public void tick() {
