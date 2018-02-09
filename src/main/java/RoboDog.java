@@ -2,12 +2,13 @@
 public class RoboDog extends Robot implements Dog{
 
 	
-	public RoboDog(String name, String description, int boredom, int health) {
-		super(name, description, boredom, health);
+	public RoboDog(String name, String description, int boredom, int health, int happiness) {
+		super(name, description, boredom, health, happiness);
 		// TODO Auto-generated constructor stub
 	}
 	public void walk() {
 		setBoredom(getBoredom() - 5);
+		setHappiness(getHappiness() + 10);
 	}
 
 

@@ -6,11 +6,8 @@ public class Organic extends VirtualPet {
 	private int thirst = 50;
 	private int waste = 50;
 
-	public Organic(String name, String description, int boredom, int health) {
-		super(name, description, boredom, health);
-	}
-	public Organic(String name, String description, int hunger, int thirst, int boredom, int waste) {
-		super(name, description, hunger, thirst, boredom, waste);
+	public Organic(String name, String description, int hunger, int thirst, int boredom, int waste, int happiness) {
+		super(name, description, hunger, thirst, boredom, waste, happiness);
 	}
 	
 	public int getHunger() {
@@ -26,13 +23,17 @@ public class Organic extends VirtualPet {
 	public void feed() {
 		hunger -= 15;
 		thirst += 5;
-		waste += 10;
+		setWaste(getWaste() + 10);
 	}
 	public void water() {
 		thirst -= 15;
 	}
 	public void waste() {
-		waste -= 20;
+		setWaste(getWaste() - 20);
+	}
+
+	public void setWaste(int waste) {
+		this.waste = waste;
 	}
 	
 	

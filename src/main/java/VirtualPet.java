@@ -8,6 +8,7 @@ public class VirtualPet {
 	private int boredom = 50;
 	private int waste = 50;
 	private int health = 50;
+	private int happiness = 50;
 	private String name = "";
 	private String description = "";
 
@@ -15,20 +16,22 @@ public class VirtualPet {
 		this.name = name;
 		this.description = description;
 	}
-	public VirtualPet(String name, String description, int boredom, int health) {
+	public VirtualPet(String name, String description, int boredom, int health, int happiness) {
 		this.name = name;
 		this.description = description;
 		this.setBoredom(boredom);
 		this.setHealth(health);
+		this.setHappiness(happiness);
 	}
 
-	public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int waste) {
+	public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int waste, int happiness) {
 		this.name = name;
 		this.description = description;
 		this.hunger = hunger;
 		this.thirst = thirst;
 		this.setBoredom(boredom);
 		this.waste = waste;
+		this.setHappiness(happiness);
 	}
 
 	public void tick() {
@@ -56,6 +59,9 @@ public class VirtualPet {
 //	}
 	public int getHealth() {
 		return health;
+	}
+	public int getHappiness() {
+		return happiness;
 	}
 
 //	public void feed() {
@@ -90,5 +96,8 @@ public class VirtualPet {
 	}
 	public void setBoredom(int boredom) {
 		this.boredom = boredom;
+	}
+	public void setHappiness(int happiness) {
+		this.happiness = happiness;
 	}
 }

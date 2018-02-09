@@ -4,8 +4,8 @@ public class Robot extends VirtualPet{
 	
 
 
-	public Robot(String name, String description, int boredom, int health) {
-		super(name, description, boredom, health);
+	public Robot(String name, String description, int boredom, int health, int happiness) {
+		super(name, description, boredom, health, happiness);
 		
 	}
 
