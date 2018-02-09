@@ -7,12 +7,19 @@ public class VirtualPet {
 	private int thirst = 50;
 	private int boredom = 50;
 	private int waste = 50;
+	private int health = 50;
 	private String name = "";
 	private String description = "";
 
 	public VirtualPet(String name, String description) {
 		this.name = name;
 		this.description = description;
+	}
+	public VirtualPet(String name, String description, int boredom, int health) {
+		this.name = name;
+		this.description = description;
+		this.boredom = boredom;
+		this.setHealth(health);
 	}
 
 	public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int waste) {
@@ -29,6 +36,7 @@ public class VirtualPet {
 		thirst += 3;
 		boredom += 3;
 		waste += 3;
+		setHealth(getHealth() - 1);
 	}
 
 	public int getHunger() {
@@ -45,6 +53,9 @@ public class VirtualPet {
 
 	public int getWaste() {
 		return waste;
+	}
+	public int getHealth() {
+		return health;
 	}
 
 	public void feed() {
@@ -63,9 +74,10 @@ public class VirtualPet {
 		hunger++;
 	}
 
-	public void waste(int poop) {
-		waste -= poop;
+	public void waste() {
+		waste -= 20;
 	}
+
 
 	@Override
 	public String toString() {
@@ -74,5 +86,8 @@ public class VirtualPet {
 
 	public String getName() {
 		return name;
+	}
+	public void setHealth(int health) {
+		this.health = health;
 	}
 }

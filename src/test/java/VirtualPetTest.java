@@ -19,5 +19,17 @@ public class VirtualPetTest {
 		int hunger = underTest.getHunger();
 		assertEquals(hunger, 50);
 	}
+	@Test
+	public void shouldGetHealth() {
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 50);
+		int health = underTest.getHealth();
+		assertEquals(health, 50);
+	}
+	@Test
+	public void shouldChangeBoredomWhileUpdatingHealth() {
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 50);
+		int health = underTest.getHealth();
+		assertEquals(health, 50);
+	}
 
 }
