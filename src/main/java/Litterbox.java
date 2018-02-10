@@ -5,6 +5,8 @@ public class Litterbox extends Rooms {
 	
 	Map<String, String> cats = new HashMap<String, String>();
 	
-	
+	public void amountOfWasteInLitterbox() {
+		
+	}
 
 }

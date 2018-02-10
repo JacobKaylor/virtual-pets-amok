@@ -1,12 +1,15 @@
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class VirtualPetShelter {
 
 	private Map<String, VirtualPet> pets = new HashMap<>();
+	private List<String> rooms = new ArrayList<>();
 
 	public void add(VirtualPet pet) {
 		pets.put(pet.getName(), pet);
@@ -28,22 +31,28 @@ public class VirtualPetShelter {
 
 	public void subtract(VirtualPet pet) {
 		pets.remove(pet.getName(), pet);
-
 	}
+	
+//	public void oilAllRoboticPets() {
+//		for(Robot pet: pets.values()) {
+//			pet.oilRobot();
+//		}
+//	}
 
-	public void feedAllPets() {
-		for (VirtualPet pet : pets.values()) {
-			pet.feed();
-		}
 
-	}
+//	public void feedAllPets() {
+//		for (VirtualPet pet : pets.values()) {
+//			pet.feed();
+//		}
+//
+//	}
 
-	public void waterAllPets() {
-		for (VirtualPet pet : pets.values()) {
-			pet.water();
-		}
-
-	}
+//	public void waterAllPets() {
+//		for (VirtualPet pet : pets.values()) {
+//			pet.water();
+//		}
+//
+//	}
 
 	public void playWithPet(VirtualPet pet) {
 

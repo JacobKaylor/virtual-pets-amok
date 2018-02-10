@@ -25,16 +25,27 @@ public class Organic extends VirtualPet {
 		thirst += 5;
 		setWaste(getWaste() + 10);
 		setHealth(getHealth()+5);
+		setHappiness(getHappiness()+2);
 	}
 	public void water() {
 		thirst -= 15;
+		setHealth(getHealth()+5);
+		setHappiness(getHappiness()+2);
 	}
 	public void waste() {
 		setWaste(getWaste() - 20);
+		setHappiness(getHappiness()+2);
 	}
 
 	public void setWaste(int waste) {
 		this.waste = waste;
+	}
+	public void tick() {
+		setHealth(getHealth()-5);
+		setHappiness(getHappiness()-5);
+		hunger += 5;
+		thirst += 5;
+		setWaste(getWaste()-5);
 	}
 	
 	
