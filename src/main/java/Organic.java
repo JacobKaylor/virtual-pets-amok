@@ -24,6 +24,7 @@ public class Organic extends VirtualPet {
 		hunger -= 15;
 		thirst += 5;
 		setWaste(getWaste() + 10);
+		setHealth(getHealth()+5);
 	}
 	public void water() {
 		thirst -= 15;

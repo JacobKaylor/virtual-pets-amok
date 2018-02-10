@@ -39,7 +39,6 @@ public class VirtualPet {
 	//	thirst += 3;
 		setBoredom(getBoredom() + 3);
 	//	waste += 3;
-		setHealth(getHealth() - 1);
 	}
 
 //	public int getHunger() {
@@ -76,6 +75,8 @@ public class VirtualPet {
 
 	public void play() {
 		setBoredom(getBoredom() - 15);
+		setHappiness(getHappiness()+5);
+		setHealth(getHealth()+5);
 	}
 
 //	public void waste() {
