@@ -60,17 +60,6 @@ public class VirtualPetShelterTest {
 		assertEquals(1, pets.size());
 	}
 
-//	@Test
-//	public void shouldFeedAllPets() {
-//		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50, 50);
-//		underTest.add(pet);
-//		underTest.add(anotherPet);
-//		underTest.feedAllPets();
-//		int newHunger = 35;
-//
-//		assertEquals(newHunger, anotherPet.getHunger());
-//		assertEquals(newHunger, pet.getHunger());
-//	}
 
 //	@Test
 //	public void shouldWaterAllPets() {
@@ -119,16 +108,23 @@ public class VirtualPetShelterTest {
 		assertEquals(newHealth, roboDog.getHealth());
 		assertEquals(newHappiness, roboDog.getHappiness());
 	}
-//	@Test
-//	public void shouldFeedAllOrganicPets(){
-//		underTest.add(pet);
-//		underTest.feedAllOrganicPets();
-//		int newHealth = 65;
-//		int newHappiness = 55;
-//		int newHunger = 35;
-//		assertEquals(newHealth, pet.getHealth());
-//		assertEquals(newHappiness, pet.getHappiness());
-//		
-//	}
+	@Test
+	public void shouldFeedAllOrganicPets(){
+		OrganicDog organicDog = new OrganicDog("Oscar", "lazy",50,50,50,50,50,50);
+		underTest.add(organicDog);
+		underTest.feedAllOrganicPets();
+		int newHunger = 35;
+		assertEquals(newHunger, organicDog.getHunger());
+	}
+	@Test
+	public void shouldWaterAllOrganicPets(){
+		OrganicDog organicDog = new OrganicDog("Oscar", "lazy",50,50,50,50,50,50);
+		underTest.add(organicDog);
+		underTest.waterAllOrganicPets();
+		int newThirst = 35;
+		assertEquals(newThirst, organicDog.getThirst());
+	}
+	
+	
 
 }

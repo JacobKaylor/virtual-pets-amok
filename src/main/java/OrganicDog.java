@@ -4,9 +4,15 @@ public class OrganicDog extends Organic implements Dog {
 	int cleanliness = 100;
 	int thirst = 50;
 
-	public OrganicDog(String name, String description, int hunger, int thirst, int boredom, int waste, int happiness) {
+	public OrganicDog(String name, String description, int hunger, int thirst, int boredom, int waste, int happiness, int cleanliness) {
 		super(name, description, hunger, thirst, boredom, waste, happiness);
-		// TODO Auto-generated constructor stub
+		this.cleanliness = cleanliness;
+	} 
+	public int getHunger() {
+		return hunger;
+	}
+	public int getThirst() {
+		return thirst;
 	}
 	@Override
 
