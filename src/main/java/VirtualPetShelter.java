@@ -103,10 +103,22 @@ public class VirtualPetShelter {
 		pet.play();
 	}
 
-	public void tick() {
+	public void tick(VirtualPet petpet) {
 		for (VirtualPet pet : pets.values()) {
-			pet.tick();
+			if(pet instanceof OrganicDog) {
+				OrganicDog organicDog = (OrganicDog) pet;
+				organicDog.tick();
+			}
+				else if(pet instanceof OrganicCat) {
+					OrganicCat organicCat = (OrganicCat) pet;
+					organicCat.tick();
+				} 
+			else if(pet instanceof Robot) {
+				Robot robot = (Robot) pet;
+				robot.tick();
+			}
 		}
 	}
-
 }
+	
+

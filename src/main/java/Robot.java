@@ -15,7 +15,7 @@ public class Robot extends VirtualPet {
 		setHealth(getHealth() - 2);
 		setHappiness(getHappiness() - 2);
 	}
-	@Override
+	
 	public int getHealth() {
 		return health;
 	}
