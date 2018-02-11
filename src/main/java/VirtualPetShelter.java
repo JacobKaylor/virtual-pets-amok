@@ -49,7 +49,7 @@ public class VirtualPetShelter {
 				Robot roboticPet = (Robot) pet;
 				roboticPet.oilRobot();
 			}
- 		}
+		}
 	}
 
 	public void feedAllOrganicPets() {
@@ -70,10 +70,10 @@ public class VirtualPetShelter {
 		}
 
 	}
-	
+
 	public void cleanAllCages() {
-		for(VirtualPet pet : pets.values()) {
-			if(pet instanceof OrganicDog) {
+		for (VirtualPet pet : pets.values()) {
+			if (pet instanceof OrganicDog) {
 				OrganicDog organicDog = (OrganicDog) pet;
 				organicDog.cleanAllCages();
 			}
@@ -81,17 +81,22 @@ public class VirtualPetShelter {
 	}
 
 	public void emptyLitterBox() {
-		litterBoxLevel = 0;
+		for (VirtualPet pet : pets.values()) {
+			if (pet instanceof OrganicCat) {
+				OrganicCat organicCat = (OrganicCat) pet;
+				organicCat.emptyLitterBox();
+			}
+		}
 	}
-	
+
 	public void walkDogs() {
 		for (VirtualPet pet : pets.values()) {
-			if(pet instanceof Dog) {
+			if (pet instanceof Dog) {
 				Dog dog = (Dog) pet;
 				dog.walk();
 			}
-			
-			}
+
+		}
 	}
 
 	public void playWithPet(VirtualPet pet) {

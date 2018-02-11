@@ -132,6 +132,14 @@ public class VirtualPetShelterTest {
 		int clean = organicDog.getCleanliness();
 		assertEquals(100,clean);
 	}
+	@Test
+	public void shouldEmptyLitterBox() {
+		OrganicCat organicCat = new OrganicCat("Oscar", "lazy",50,50,50,50,50,50);
+		underTest.add(organicCat);
+		underTest.emptyLitterBox();
+		int clean = organicCat.getCleanliness();
+		assertEquals(100,clean);
+	}
 	
 
 }
