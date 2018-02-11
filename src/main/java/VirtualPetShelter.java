@@ -11,6 +11,16 @@ public class VirtualPetShelter {
 	private Map<String, VirtualPet> pets = new HashMap<>();
 	private List<String> rooms = new ArrayList<>();
 
+	public int litterBoxLevel;
+
+	public boolean checkIfLitterboxIsDirty() {
+		if (litterBoxLevel >= 100) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void add(VirtualPet pet) {
 		pets.put(pet.getName(), pet);
 
@@ -32,32 +42,60 @@ public class VirtualPetShelter {
 	public void subtract(VirtualPet pet) {
 		pets.remove(pet.getName(), pet);
 	}
+
+	public void oilAllRoboticPets() {
+		for (VirtualPet pet : pets()) {
+			if (pet instanceof Robot) {
+				Robot roboticPet = (Robot) pet;
+				roboticPet.oilRobot();
+			}
+ 		}
+	}
+
+	public void feedAllOrganicPets() {
+		for (VirtualPet pet : pets.values()) {
+			if (pet instanceof Organic) {
+				Organic organicPet = (Organic) pet;
+				organicPet.feed();
+			}
+		}
+
+	}
+
+	public void waterAllOrganicPets() {
+		for (VirtualPet pet : pets.values()) {
+			if (pet instanceof Organic) {
+				((Organic) pet).water();
+			}
+		}
+
+	}
 	
-//	public void oilAllRoboticPets() {
-//		for(Robot pet: pets.values()) {
-//			pet.oilRobot();
-//		}
-//	}
+	public void cleanAllCages() {
+		for(VirtualPet pet : pets.values()) {
+			if(pet instanceof OrganicDog) {
+				OrganicDog organicDog = (OrganicDog) pet;
+				organicDog.cleanAllCages();
+			}
+		}
+	}
 
-
-//	public void feedAllPets() {
-//		for (VirtualPet pet : pets.values()) {
-//			pet.feed();
-//		}
-//
-//	}
-
-//	public void waterAllPets() {
-//		for (VirtualPet pet : pets.values()) {
-//			pet.water();
-//		}
-//
-//	}
+	public void emptyLitterBox() {
+		litterBoxLevel = 0;
+	}
+	
+	public void walkDogs() {
+		for (VirtualPet pet : pets.values()) {
+			if(pet instanceof Dog) {
+				Dog dog = (Dog) pet;
+				dog.walk();
+			}
+			
+			}
+	}
 
 	public void playWithPet(VirtualPet pet) {
-
 		pet.play();
-
 	}
 
 	public void tick() {

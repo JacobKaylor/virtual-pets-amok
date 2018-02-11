@@ -18,7 +18,7 @@ public class VirtualPetShelterTest {
 	public void setup() {
 		underTest = new VirtualPetShelter();
 
-		pet = new VirtualPet("jim", "large", 50, 50, 50, 50);
+		pet = new VirtualPet("jim", "large", 50, 50, 50, 50, 50);
 	}
 
 	@Test
@@ -60,29 +60,29 @@ public class VirtualPetShelterTest {
 		assertEquals(1, pets.size());
 	}
 
-	@Test
-	public void shouldFeedAllPets() {
-		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50);
-		underTest.add(pet);
-		underTest.add(anotherPet);
-		underTest.feedAllPets();
-		int newHunger = 35;
+//	@Test
+//	public void shouldFeedAllPets() {
+//		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50, 50);
+//		underTest.add(pet);
+//		underTest.add(anotherPet);
+//		underTest.feedAllPets();
+//		int newHunger = 35;
+//
+//		assertEquals(newHunger, anotherPet.getHunger());
+//		assertEquals(newHunger, pet.getHunger());
+//	}
 
-		assertEquals(newHunger, anotherPet.getHunger());
-		assertEquals(newHunger, pet.getHunger());
-	}
-
-	@Test
-	public void shouldWaterAllPets() {
-		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50);
-		underTest.add(pet);
-		underTest.add(anotherPet);
-		underTest.waterAllPets();
-		int newThirst = 35;
-
-		assertEquals(newThirst, anotherPet.getThirst());
-		assertEquals(newThirst, pet.getThirst());
-	}
+//	@Test
+//	public void shouldWaterAllPets() {
+//		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50, 50);
+//		underTest.add(pet);
+//		underTest.add(anotherPet);
+//		underTest.waterAllPets();
+//		int newThirst = 35;
+//
+//		assertEquals(newThirst, anotherPet.getThirst());
+//		assertEquals(newThirst, pet.getThirst());
+//	}
 
 	@Test
 	public void shouldPlayWithOnePet() {
@@ -93,22 +93,42 @@ public class VirtualPetShelterTest {
 		assertEquals(newPlay, pet.getBoredom());
 	}
 
+//	@Test
+//	public void tickMethod() {
+//		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50);
+//		underTest.add(pet);
+//		underTest.add(anotherPet);
+//		underTest.tick();
+//		int newHunger = 53;
+//		int newThirst = 53;
+//		int newBoredom = 53;
+//		int newWaste = 53;
+//
+//		assertEquals(newHunger, pet.getHunger());
+//		assertEquals(newThirst, pet.getThirst());
+//		assertEquals(newBoredom, pet.getBoredom());
+//		assertEquals(newWaste, pet.getWaste());
+//	}
 	@Test
-	public void tickMethod() {
-		// VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50);
-		underTest.add(pet);
-		// underTest.add(anotherPet);
-		underTest.tick();
-		int newHunger = 53;
-		int newThirst = 53;
-		int newBoredom = 53;
-		int newWaste = 53;
-
-		assertEquals(newHunger, pet.getHunger());
-		assertEquals(newThirst, pet.getThirst());
-		assertEquals(newBoredom, pet.getBoredom());
-		assertEquals(newWaste, pet.getWaste());
-
+	public void shouldOilAllRoboticPets(){
+		RoboDog roboDog = new RoboDog("metal","small", 50, 50,50);
+		underTest.add(roboDog);
+		underTest.oilAllRoboticPets();
+		int newHealth = 65;
+		int newHappiness = 55;
+		assertEquals(newHealth, roboDog.getHealth());
+		assertEquals(newHappiness, roboDog.getHappiness());
 	}
+//	@Test
+//	public void shouldFeedAllOrganicPets(){
+//		underTest.add(pet);
+//		underTest.feedAllOrganicPets();
+//		int newHealth = 65;
+//		int newHappiness = 55;
+//		int newHunger = 35;
+//		assertEquals(newHealth, pet.getHealth());
+//		assertEquals(newHappiness, pet.getHappiness());
+//		
+//	}
 
 }

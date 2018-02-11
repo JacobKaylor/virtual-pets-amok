@@ -7,7 +7,7 @@ public class VirtualPet {
 	private int thirst = 50;
 	private int boredom = 50;
 	private int waste = 50;
-	private int health = 50;
+	protected int health = 50;
 	private int happiness = 50;
 	private String name = "";
 	private String description = "";
@@ -57,8 +57,10 @@ public class VirtualPet {
 //		return waste;
 //	}
 	public int getHealth() {
-		return health;
-	}
+	return health;
+}
+		
+	
 	public int getHappiness() {
 		return happiness;
 	}

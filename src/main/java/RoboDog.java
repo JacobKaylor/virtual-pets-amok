@@ -6,6 +6,7 @@ public class RoboDog extends Robot implements Dog{
 		super(name, description, boredom, health, happiness);
 		// TODO Auto-generated constructor stub
 	}
+	@Override
 	public void walk() {
 		setBoredom(getBoredom() - 5);
 		setHappiness(getHappiness() + 10);
