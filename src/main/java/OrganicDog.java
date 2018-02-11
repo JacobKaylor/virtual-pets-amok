@@ -14,6 +14,9 @@ public class OrganicDog extends Organic implements Dog {
 	public int getThirst() {
 		return thirst;
 	}
+	public int getCleanliness() {
+		return cleanliness;
+	}
 	@Override
 
 	public void walk() {

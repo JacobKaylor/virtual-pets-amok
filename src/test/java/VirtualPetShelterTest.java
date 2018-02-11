@@ -124,7 +124,14 @@ public class VirtualPetShelterTest {
 		int newThirst = 35;
 		assertEquals(newThirst, organicDog.getThirst());
 	}
-	
+	@Test
+	public void shouldCleanAllCages() {
+		OrganicDog organicDog = new OrganicDog("Oscar", "lazy",50,50,50,50,50,50);
+		underTest.add(organicDog);
+		underTest.cleanAllCages();
+		int clean = organicDog.getCleanliness();
+		assertEquals(100,clean);
+	}
 	
 
 }
