@@ -16,6 +16,7 @@ public class VirtualPet {
 		this.name = name;
 		this.description = description;
 	}
+
 	public VirtualPet(String name, String description, int boredom, int health, int happiness) {
 		this.name = name;
 		this.description = description;
@@ -35,56 +36,54 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-	//	hunger += 3;
-	//	thirst += 3;
+		// hunger += 3;
+		// thirst += 3;
 		setBoredom(getBoredom() + 3);
-	//	waste += 3;
+		// waste += 3;
 	}
 
-//	public int getHunger() {
-//		return hunger;
-//	}
-//
-//	public int getThirst() {
-//		return thirst;
-//	}
+	// public int getHunger() {
+	// return hunger;
+	// }
+	//
+	// public int getThirst() {
+	// return thirst;
+	// }
 
 	public int getBoredom() {
 		return boredom;
 	}
 
-//	public int getWaste() {
-//		return waste;
-//	}
+	// public int getWaste() {
+	// return waste;
+	// }
 	public int getHealth() {
-	return health;
-}
-		
-	
+		return health;
+	}
+
 	public int getHappiness() {
 		return happiness;
 	}
 
-//	public void feed() {
-//		hunger -= 15;
-//		thirst += 5;
-//		waste += 10;
-//	}
+	// public void feed() {
+	// hunger -= 15;
+	// thirst += 5;
+	// waste += 10;
+	// }
 
-//	public void water() {
-//		thirst -= 15;
-//	}
+	// public void water() {
+	// thirst -= 15;
+	// }
 
 	public void play() {
 		setBoredom(getBoredom() - 15);
-		setHappiness(getHappiness()+5);
-		setHealth(getHealth()+5);
+		setHappiness(getHappiness() + 5);
+		setHealth(getHealth() + 5);
 	}
 
-//	public void waste() {
-//		waste -= 20;
-//	}
-
+	// public void waste() {
+	// waste -= 20;
+	// }
 
 	@Override
 	public String toString() {
@@ -94,13 +93,17 @@ public class VirtualPet {
 	public String getName() {
 		return name;
 	}
+
 	public void setHealth(int health) {
 		this.health = health;
 	}
+
 	public void setBoredom(int boredom) {
 		this.boredom = boredom;
 	}
+
 	public void setHappiness(int happiness) {
 		this.happiness = happiness;
 	}
+
 }

@@ -15,19 +15,21 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldGetHealth() {
-		VirtualPet underTest = new VirtualPet("name", "description", 50, 50);
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 50, 50);
 		int health = underTest.getHealth();
 		assertEquals(health, 50);
 	}
+
 	@Test
 	public void shouldChangeBoredomWhileUpdatingHealth() {
-		VirtualPet underTest = new VirtualPet("name", "description", 50, 50);
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 50, 50);
 		int health = underTest.getHealth();
 		assertEquals(health, 50);
 	}
+
 	@Test
 	public void shouldChangeBoredom() {
-		VirtualPet underTest = new VirtualPet("name", "description", 50, 50);
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 50, 50);
 		underTest.play();
 		int boredom = underTest.getBoredom();
 		assertEquals(boredom, 35);

@@ -5,6 +5,7 @@ public class Robot extends VirtualPet {
 		super(name, description, boredom, health, happiness);
 
 	}
+
 	public void oilRobot() {
 		setHealth(getHealth() + 15);
 		setHappiness(getHappiness() + 5);
@@ -15,7 +16,7 @@ public class Robot extends VirtualPet {
 		setHealth(getHealth() - 2);
 		setHappiness(getHappiness() - 2);
 	}
-	
+
 	public int getHealth() {
 		return health;
 	}

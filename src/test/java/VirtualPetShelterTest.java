@@ -46,34 +46,6 @@ public class VirtualPetShelterTest {
 	}
 
 	@Test
-	public void shouldAllowAdoption() {
-		VirtualPet anotherPet = new VirtualPet("jerry", "large");
-		underTest.subtract(pet);
-		underTest.add(anotherPet);
-
-		Collection<VirtualPet> pets = underTest.pets();
-
-		assertThat(pets, org.hamcrest.Matchers.contains(anotherPet));
-
-		assertFalse(pets.contains(pet));
-		assertTrue(pets.contains(anotherPet));
-		assertEquals(1, pets.size());
-	}
-
-
-//	@Test
-//	public void shouldWaterAllPets() {
-//		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50, 50);
-//		underTest.add(pet);
-//		underTest.add(anotherPet);
-//		underTest.waterAllPets();
-//		int newThirst = 35;
-//
-//		assertEquals(newThirst, anotherPet.getThirst());
-//		assertEquals(newThirst, pet.getThirst());
-//	}
-
-	@Test
 	public void shouldPlayWithOnePet() {
 		underTest.add(pet);
 		underTest.playWithPet(pet);
@@ -82,25 +54,9 @@ public class VirtualPetShelterTest {
 		assertEquals(newPlay, pet.getBoredom());
 	}
 
-//	@Test
-//	public void tickMethod() {
-//		VirtualPet anotherPet = new VirtualPet("jerry", "large", 50, 50, 50, 50);
-//		underTest.add(pet);
-//		underTest.add(anotherPet);
-//		underTest.tick();
-//		int newHunger = 53;
-//		int newThirst = 53;
-//		int newBoredom = 53;
-//		int newWaste = 53;
-//
-//		assertEquals(newHunger, pet.getHunger());
-//		assertEquals(newThirst, pet.getThirst());
-//		assertEquals(newBoredom, pet.getBoredom());
-//		assertEquals(newWaste, pet.getWaste());
-//	}
 	@Test
-	public void shouldOilAllRoboticPets(){
-		RoboDog roboDog = new RoboDog("metal","small", 50, 50,50);
+	public void shouldOilAllRoboticPets() {
+		RoboDog roboDog = new RoboDog("metal", "small", 50, 50, 50);
 		underTest.add(roboDog);
 		underTest.oilAllRoboticPets();
 		int newHealth = 65;
@@ -108,38 +64,41 @@ public class VirtualPetShelterTest {
 		assertEquals(newHealth, roboDog.getHealth());
 		assertEquals(newHappiness, roboDog.getHappiness());
 	}
+
 	@Test
-	public void shouldFeedAllOrganicPets(){
-		OrganicDog organicDog = new OrganicDog("Oscar", "lazy",50,50,50,50,50,50);
+	public void shouldFeedAllOrganicPets() {
+		OrganicDog organicDog = new OrganicDog("Oscar", "lazy", 50, 50, 50, 50, 50, 50);
 		underTest.add(organicDog);
 		underTest.feedAllOrganicPets();
 		int newHunger = 35;
 		assertEquals(newHunger, organicDog.getHunger());
 	}
+
 	@Test
-	public void shouldWaterAllOrganicPets(){
-		OrganicDog organicDog = new OrganicDog("Oscar", "lazy",50,50,50,50,50,50);
+	public void shouldWaterAllOrganicPets() {
+		OrganicDog organicDog = new OrganicDog("Oscar", "lazy", 50, 50, 50, 50, 50, 50);
 		underTest.add(organicDog);
 		underTest.waterAllOrganicPets();
 		int newThirst = 35;
 		assertEquals(newThirst, organicDog.getThirst());
 	}
+
 	@Test
 	public void shouldCleanAllCages() {
-		OrganicDog organicDog = new OrganicDog("Oscar", "lazy",50,50,50,50,50,50);
+		OrganicDog organicDog = new OrganicDog("Oscar", "lazy", 50, 50, 50, 50, 50, 50);
 		underTest.add(organicDog);
 		underTest.cleanAllCages();
 		int clean = organicDog.getCleanliness();
-		assertEquals(100,clean);
+		assertEquals(100, clean);
 	}
+
 	@Test
 	public void shouldEmptyLitterBox() {
-		OrganicCat organicCat = new OrganicCat("Oscar", "lazy",50,50,50,50,50,50);
+		OrganicCat organicCat = new OrganicCat("Oscar", "lazy", 50, 50, 50, 50, 50, 50);
 		underTest.add(organicCat);
 		underTest.emptyLitterBox();
 		int clean = organicCat.getCleanliness();
-		assertEquals(100,clean);
+		assertEquals(100, clean);
 	}
-	
 
 }

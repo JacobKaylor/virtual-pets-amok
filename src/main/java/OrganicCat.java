@@ -6,7 +6,7 @@ public class OrganicCat extends Organic {
 
 	public OrganicCat(String name, String description, int hunger, int thirst, int boredom, int waste, int happiness,
 			int cleanliness) {
-		super(name, description,hunger, thirst, boredom, waste, happiness);
+		super(name, description, hunger, thirst, boredom, waste, happiness);
 		this.cleanliness = cleanliness;
 	}
 

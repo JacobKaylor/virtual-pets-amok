@@ -4,12 +4,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class VirtualPetShelter {
 
 	private Map<String, VirtualPet> pets = new HashMap<>();
-	private List<String> rooms = new ArrayList<>();
 
 	public int litterBoxLevel;
 
@@ -39,8 +39,8 @@ public class VirtualPetShelter {
 		return pets.keySet();
 	}
 
-	public void subtract(VirtualPet pet) {
-		pets.remove(pet.getName(), pet);
+	public void removePet(String petAdopt) {
+		pets.remove(petAdopt);
 	}
 
 	public void oilAllRoboticPets() {
@@ -105,20 +105,28 @@ public class VirtualPetShelter {
 
 	public void tick(VirtualPet petpet) {
 		for (VirtualPet pet : pets.values()) {
-			if(pet instanceof OrganicDog) {
+			if (pet instanceof OrganicDog) {
 				OrganicDog organicDog = (OrganicDog) pet;
 				organicDog.tick();
-			}
-				else if(pet instanceof OrganicCat) {
-					OrganicCat organicCat = (OrganicCat) pet;
-					organicCat.tick();
-				} 
-			else if(pet instanceof Robot) {
+			} else if (pet instanceof OrganicCat) {
+				OrganicCat organicCat = (OrganicCat) pet;
+				organicCat.tick();
+			} else if (pet instanceof Robot) {
 				Robot robot = (Robot) pet;
 				robot.tick();
 			}
 		}
 	}
-}
-	
 
+	public boolean hasPets() {
+		return !pets.isEmpty();
+	}
+
+	public void showPets(VirtualPet pet) {
+		for (Entry<String, VirtualPet> entry : pets.entrySet()) {
+			entry.getValue();
+			System.out.println("Name:" + entry.getKey());
+		}
+	}
+
+}
